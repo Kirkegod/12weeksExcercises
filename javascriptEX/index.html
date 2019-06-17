@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="displayDate()">Date</button><br>
+    <button type="button" onclick="displayJoke()">Joke</button><br>
+    
+    <div>
+        <span id="display_text"></span>
+    </div>
+
+<script type="text/javascript">
+
+function displayDate()
+{
+    let today = new Date();
+    document.getElementById("display_text").innerHTML = 
+    "Yesterday is history, tomorrow is a mysteri, but today is "+
+    today.toDateString();
+}
+
+function displayJoke()
+{
+    console.log("Shows Joke");
+    document.getElementById("display_text").innerHTML = giveRandomJoke();
+}
+
+
+
+function giveRandomJoke()
+{
+    jokeArray = new Array();
+    jokeArray[0] = "What do you get when you cross a joke with a rhetorical question?";
+    jokeArray[1] = "Algorithms: Word used by programmers when... they do not want to explain what they did";
+    jokeArray[2] = "Why do Java programmers have to wear glasses?\n\n-Because they don't C#";
+    jokeArray[3] = "The programmer got stucked in the shower because the instructions on the shampoo bottle said...\n\n Lather, Rinse, Repeat.";
+   
+    randNbr =  Math.floor(Math.random() * jokeArray.length);
+
+    return jokeArray[randNbr];
+}
+</script>
+</body>
+</html>
