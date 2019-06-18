@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Date and Jokes</title>
 </head>
 <body>
-    <button type="button" onclick="displayDate()">Date</button><br>
-    <button type="button" onclick="displayJoke()">Joke</button><br>
+    <button id="dateButton">Date</button><br>
+    <button id="jokeButton">Joke</button><br>
     
     <div>
         <span id="display_text"></span>
     </div>
 
 <script type="text/javascript">
+
+document.getElementById("dateButton").addEventListener("click", displayDate);
+document.getElementById("jokeButton").addEventListener("click", displayJoke);
+
+
 
 function displayDate()
 {
@@ -29,8 +34,6 @@ function displayJoke()
     console.log("Shows Joke");
     document.getElementById("display_text").innerHTML = giveRandomJoke();
 }
-
-
 
 function giveRandomJoke()
 {
